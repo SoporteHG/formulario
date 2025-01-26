@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cotización de Seguros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("file:///D:/fondo1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px 0 50px 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #opcionesAuto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="D:/logo.jpeg" alt="Logo de la Empresa">
+        </div>
+        <h1>Formulario de Cotización</h1>
+       <form id="cotizacionForm">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 5551234567">
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="Ej. correo@ejemplo.com">
+
+            <label for="tipoSeguro">Tipo de Seguro:</label>
+            <select id="tipoSeguro" name="tipoSeguro" required onchange="mostrarOpcionesAuto()">
+                <option value="">Selecciona una opción</option>
+                <option value="auto">Auto</option>
+                <option value="vida">Vida</option>
+                <option value="hogar">Hogar</option>
+                <option value="gastos_medicos">Gastos Médicos</option>
+            </select>
+
+            <div id="opcionesAuto">
+                <label for="tipoCobertura">Tipo de Cobertura:</label>
+                <select id="tipoCobertura" name="tipoCobertura">
+                    <option value="basica">Básica</option>
+                    <option value="amplia">Amplia</option>
+                    <option value="limitada">Limitada</option>
+                    <option value="rc">Responsabilidad Civil</option>
+                </select>
+
+                <label for="modeloAuto">Modelo del Auto:</label>
+                <input type="text" id="modeloAuto" name="modeloAuto" placeholder="Ej. 2022">
+
+                <label for="marcaAuto">Marca del Auto:</label>
+                <select id="marcaAuto" name="marcaAuto">
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Renault">Renault</option>
+                    <option value="SEAT">SEAT</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="RAM">RAM</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Volvo">Volvo</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Infiniti">Infiniti</option>
+                    <option value="Acura">Acura</option>
+                    <option value="Jaguar">Jaguar</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Alfa Romeo">Alfa Romeo</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="Aston Martin">Aston Martin</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="BYD">BYD</option>
+                    <option value="JAC">JAC</option>
+                    <option value="Polestar">Polestar</option>
+                    <option value="Lincoln">Lincoln</option>
+                    <option value="Peugeot">Peugeot</option>
+                    <option value="Cupra">Cupra</option>
+                    <option value="Cadillac">Cadillac</option>
+                </select>
+
+                <label for="usoAuto">Uso del Auto:</label>
+                <select id="usoAuto" name="usoAuto">
+                    <option value="personal">Personal</option>
+                    <option value="comercial">Comercial</option>
+                    <option value="publico">Público</option>
+                </select>
+            </div>
+
+            <label for="mensaje">Detalles adicionales:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Ingresa más detalles sobre el seguro que necesitas"></textarea>
+
+            <button type="button" onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
+            <button type="button" onclick="enviarPorCorreo()">Enviar por Correo</button>
+        </form>
+    </div>
+
+    <script>
+        function mostrarOpcionesAuto() {
+            const tipoSeguro = document.getElementById('tipoSeguro').value;
+            const opcionesAuto = document.getElementById('opcionesAuto');
+
+            if (tipoSeguro === 'auto') {
+                opcionesAuto.style.display = 'block';
+            } else {
+                opcionesAuto.style.display = 'none';
+            }
+        }
+
+        function enviarPorWhatsApp() {
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const tipoSeguro = document.getElementById('tipoSeguro').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            let detallesAuto = '';
+            if (tipoSeguro === 'auto') {
+                const tipoCobertura = document.getElementById('tipoCobertura').value;
+                const modeloAuto = document.getElementById('modeloAuto').value;
+                const marcaAuto = document.getElementById('marcaAuto').value;
+                const usoAuto = document.getElementById('usoAuto').value;
+
+                detallesAuto = `\n- Tipo de Cobertura: ${tipoCobertura}` +
+                               `\n- Modelo del Auto: ${modeloAuto}` +
+                               `\n- Marca del Auto: ${marcaAuto}` +
+                               `\n- Uso del Auto: ${usoAuto}`;
+            }
+
+            if (!nombre || !telefono || !email || !tipoSeguro) {
+                alert('Por favor, llena todos los campos requeridos.');
+                return;
+            }
+
+            const mensajeWhatsApp = `Hola, mi nombre es ${nombre}.\n\n` +
+                `Estoy interesado en una cotización de seguro de tipo: ${tipoSeguro}.\n` +
+                `Mis datos son:\n- Teléfono: ${telefono}\n- Correo: ${email}` +
+                detallesAuto +
+                (mensaje ? `\nDetalles adicionales: ${mensaje}` : '');
+
+            const numeroWhatsApp = "525518987754"; // Reemplaza con tu número de WhatsApp incluyendo el código de país
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+            window.open(url, '_blank');
+        }
+
+        function enviarPorCorreo() {
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const tipoSeguro = document.getElementById('tipoSeguro').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            let detallesAuto = '';
+            if (tipoSeguro === 'auto') {
+                const tipoCobertura = document.getElementById('tipoCobertura').value;
+                const modeloAuto = document.getElementById('modeloAuto').value;
+                const marcaAuto = document.getElementById('marcaAuto').value;
+                const usoAuto = document.getElementById('usoAuto').value;
+
+                detallesAuto = `\n- Tipo de Cobertura: ${tipoCobertura}` +
+                               `\n- Modelo del Auto: ${modeloAuto}` +
+                               `\n- Marca del Auto: ${marcaAuto}` +
+                               `\n- Uso del Auto: ${usoAuto}`;
+            }
+
+            if (!nombre || !telefono || !email || !tipoSeguro) {
+                alert('Por favor, llena todos los campos requeridos.');
+                return;
+            }
+
+            const asunto = `Cotización de Seguro - ${tipoSeguro}`;
+            const cuerpo = `Hola,\n\nMi nombre es ${nombre}.\n` +
+                `Estoy interesado en una cotización de seguro de tipo: ${tipoSeguro}.\n\n` +
+                `Mis datos son:\n- Teléfono: ${telefono}\n- Correo: ${email}` +
+                detallesAuto +
+                (mensaje ? `\nDetalles adicionales: ${mensaje}` : '');
+
+            const correo = "atencionaclientes@hg-insurance.com.mx";
+            const url = `mailto:${correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+
+            window.open(url, '_blank');
+        }
+    </script>
+    </div>
+
+    <footer style="text-align: center; padding: 10px; background: #f8f9fa; color: #333; margin-top: 20px; font-size: 14px;">
+        © 2025 HG-Insurance - Todos los derechos reservados.
+    </footer>
+    </body>
+    
+</html>
